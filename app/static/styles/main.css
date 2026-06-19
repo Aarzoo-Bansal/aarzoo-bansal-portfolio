@@ -300,6 +300,15 @@ body {
     margin-bottom: 8px;
 }
 
+/* Map page — Leaflet container */
+#map {
+    height: 480px;
+    width: 100%;
+    border-radius: 16px;
+    box-shadow: 0 10px 28px rgba(29, 83, 159, 0.18);
+    z-index: 1;
+}
+
 .profile {
     background-color: #1d539f !important;
     text-align: center;
