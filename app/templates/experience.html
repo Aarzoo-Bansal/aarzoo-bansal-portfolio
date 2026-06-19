@@ -2,7 +2,35 @@
 
 {% block content %}
     <section class="page-section">
-        <h1>{{ title }}</h1>
-        <p>Coming soon!</p>
+        <h1>Experience</h1>
+
+        <div class="timeline">
+            {% for exp in experiences %}
+                <article class="exp-card">
+                    <div class="exp-header">
+                        <h2 class="exp-role">{{ exp.role }}</h2>
+                        {% if exp.dates %}
+                            <span class="exp-dates">{{ exp.dates }}</span>
+                        {% endif %}
+                    </div>
+
+                    <p class="exp-company">{{ exp.company }}</p>
+
+                    {% if exp.awards %}
+                        <div class="exp-awards">
+                            {% for award in exp.awards %}
+                                <span class="award">🏆 {{ award }}</span>
+                            {% endfor %}
+                        </div>
+                    {% endif %}
+
+                    <ul class="exp-bullets">
+                        {% for bullet in exp.bullets %}
+                            <li>{{ bullet }}</li>
+                        {% endfor %}
+                    </ul>
+                </article>
+            {% endfor %}
+        </div>
     </section>
 {% endblock %}
