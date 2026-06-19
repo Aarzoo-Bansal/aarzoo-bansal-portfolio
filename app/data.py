@@ -128,3 +128,28 @@ EXPERIENCES = [
         ],
     },
 ]
+
+# Hobbies, shown as polaroid cards in hobbies.html.
+# "image" is a filename inside app/static/img/.
+HOBBIES = [
+    {
+        "name": "Travelling",
+        "image": "travelling.png",
+        "caption": "Chasing new cultures and views across three continents.",
+    },
+    {
+        "name": "Painting",
+        "image": "painting.png",
+        "caption": "Unwinding with a canvas and a splash of color.",
+    },
+    {
+        "name": "Cooking",
+        "image": "cooking.png",
+        "caption": "Experimenting with recipes from around the world.",
+    },
+    {
+        "name": "Dancing",
+        "image": "dancing.jpeg",
+        "caption": "Moving to the rhythm whenever the music's on.",
+    },
+]
