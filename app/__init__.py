@@ -2,7 +2,7 @@ import os
 from flask import Flask, render_template, request
 from dotenv import load_dotenv
 
-from app.data import PAGES, EXPERIENCES
+from app.data import PAGES, EXPERIENCES, PLACES
 
 load_dotenv()
 app = Flask(__name__)
@@ -31,4 +31,4 @@ def hobbies():
 
 @app.route('/map')
 def map():
-    return render_template('map.html', title="Map", pages=PAGES)
+    return render_template('map.html', title="Map", pages=PAGES, places=PLACES)
