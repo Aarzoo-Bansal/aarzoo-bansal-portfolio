@@ -2,7 +2,21 @@
 
 {% block content %}
     <section class="page-section">
-        <h1>{{ title }}</h1>
-        <p>Coming soon!</p>
+        <h1>Hobbies</h1>
+
+        <div class="polaroid-wall">
+            {% for hobby in hobbies %}
+                <figure class="polaroid">
+                    <div class="polaroid-photo">
+                        <img src="{{ url_for('static', filename='img/' ~ hobby.image) }}"
+                             alt="{{ hobby.name }}">
+                    </div>
+                    <figcaption class="polaroid-caption">
+                        <span class="polaroid-name">{{ hobby.name }}</span>
+                        <span class="polaroid-note">{{ hobby.caption }}</span>
+                    </figcaption>
+                </figure>
+            {% endfor %}
+        </div>
     </section>
 {% endblock %}

@@ -300,6 +300,88 @@ body {
     margin-bottom: 8px;
 }
 
+/* Hobbies — polaroid wall */
+.polaroid-wall {
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: center;
+    gap: 36px 28px;
+    padding: 10px 0 30px 0;
+}
+
+.polaroid {
+    width: 300px;
+    margin: 0;
+    padding: 16px 16px 0 16px;
+    background-color: #ffffff;
+    box-shadow: 0 10px 24px rgba(0, 0, 0, 0.18);
+    transition: transform 0.25s ease, box-shadow 0.25s ease;
+    /* Render on its own GPU layer so the rotation stays crisp */
+    backface-visibility: hidden;
+    -webkit-backface-visibility: hidden;
+    transform-origin: center center;
+}
+
+.polaroid-photo img,
+.polaroid-name {
+    backface-visibility: hidden;
+    -webkit-backface-visibility: hidden;
+}
+
+/* Give each polaroid a slightly different casual tilt */
+.polaroid:nth-child(odd) {
+    transform: rotate(-3deg);
+}
+
+.polaroid:nth-child(even) {
+    transform: rotate(2.5deg);
+}
+
+.polaroid:nth-child(3n) {
+    transform: rotate(-1.5deg);
+}
+
+.polaroid-photo {
+    width: 100%;
+    height: 300px;
+    overflow: hidden;
+    background-color: #eceff4;
+}
+
+.polaroid-photo img {
+    width: 100%;
+    height: 100%;
+    object-fit: cover;
+    display: block;
+}
+
+.polaroid-caption {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    text-align: center;
+    padding: 12px 6px 18px 6px;
+}
+
+.polaroid-name {
+    font-family: "Caveat", cursive;
+    font-size: 28px;
+    font-weight: 700;
+    color: #1d539f;
+    line-height: 1;
+}
+
+.polaroid-note {
+    font-size: 13px;
+    color: #666;
+    margin-top: 4px;
+}
+
+/* Hover: straighten, lift, and pop the shadow */
+.polaroid:hover {
+    transform: rotate(0deg) translateY(-10px) scale(1.04);
+    box-shadow: 0 22px 40px rgba(0, 0, 0, 0.28);
+    z-index: 2;
 /* Map page — Leaflet container */
 #map {
     height: 480px;
