@@ -2,7 +2,41 @@
 
 {% block content %}
     <section class="page-section">
-        <h1>{{ title }}</h1>
-        <p>Coming soon!</p>
+        <h1>Education</h1>
+
+        <div class="edu-list">
+            {% for edu in education %}
+                <article class="edu-card">
+                    <div class="edu-header">
+                        <h2 class="edu-degree">{{ edu.degree }}</h2>
+                        <span class="edu-gpa">GPA {{ edu.gpa }}</span>
+                    </div>
+
+                    <div class="edu-subhead">
+                        <span class="edu-school">{{ edu.school }}</span>
+                        {% if edu.dates %}
+                            <span class="edu-dates">{{ edu.dates }}</span>
+                        {% endif %}
+                    </div>
+
+                    {% if edu.roles %}
+                        <div class="edu-roles">
+                            {% for role in edu.roles %}
+                                <span class="edu-role">{{ role }}</span>
+                            {% endfor %}
+                        </div>
+                    {% endif %}
+
+                    {% if edu.courses %}
+                        <p class="edu-label">Relevant Coursework</p>
+                        <div class="edu-courses">
+                            {% for course in edu.courses %}
+                                <span class="course">{{ course }}</span>
+                            {% endfor %}
+                        </div>
+                    {% endif %}
+                </article>
+            {% endfor %}
+        </div>
     </section>
 {% endblock %}

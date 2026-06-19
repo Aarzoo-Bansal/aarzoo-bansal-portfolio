@@ -300,6 +300,121 @@ body {
     margin-bottom: 8px;
 }
 
+/* Education cards */
+.edu-list {
+    display: flex;
+    flex-direction: column;
+    gap: 24px;
+    text-align: left;
+}
+
+.edu-card {
+    background-color: #ffffff;
+    border-radius: 14px;
+    padding: 24px 28px;
+    box-shadow:
+        0 1px 2px rgba(29, 83, 159, 0.10),
+        0 4px 8px rgba(29, 83, 159, 0.10),
+        0 10px 20px rgba(29, 83, 159, 0.12),
+        0 18px 36px rgba(29, 83, 159, 0.10);
+    transition: transform 0.2s ease, box-shadow 0.2s ease;
+}
+
+.edu-card:hover {
+    transform: translateY(-8px) scale(1.01);
+    box-shadow:
+        0 2px 4px rgba(29, 83, 159, 0.12),
+        0 8px 16px rgba(29, 83, 159, 0.16),
+        0 18px 36px rgba(29, 83, 159, 0.20),
+        0 30px 60px rgba(29, 83, 159, 0.18);
+}
+
+.edu-header {
+    display: flex;
+    justify-content: space-between;
+    align-items: baseline;
+    flex-wrap: wrap;
+    gap: 8px;
+}
+
+.edu-degree {
+    color: #1d539f;
+    font-size: 21px;
+    font-weight: 700;
+    margin: 0;
+}
+
+.edu-gpa {
+    background-color: #e8f0fb;
+    color: #1d539f;
+    font-size: 14px;
+    font-weight: 700;
+    padding: 4px 14px;
+    border-radius: 20px;
+    white-space: nowrap;
+}
+
+.edu-subhead {
+    display: flex;
+    justify-content: space-between;
+    align-items: baseline;
+    flex-wrap: wrap;
+    gap: 8px;
+    margin: 6px 0 14px 0;
+}
+
+.edu-school {
+    color: #333;
+    font-size: 16px;
+    font-weight: 500;
+}
+
+.edu-dates {
+    color: #777;
+    font-size: 14px;
+    font-weight: 500;
+    white-space: nowrap;
+}
+
+.edu-roles {
+    display: flex;
+    flex-wrap: wrap;
+    gap: 8px;
+    margin-bottom: 16px;
+}
+
+.edu-role {
+    background-color: #fff4d6;
+    color: #8a6d00;
+    font-size: 13px;
+    font-weight: 500;
+    padding: 4px 12px;
+    border-radius: 20px;
+}
+
+.edu-label {
+    color: #555;
+    font-size: 13px;
+    font-weight: 700;
+    text-transform: uppercase;
+    letter-spacing: 0.04em;
+    margin: 0 0 8px 0;
+}
+
+.edu-courses {
+    display: flex;
+    flex-wrap: wrap;
+    gap: 8px;
+}
+
+.edu-courses .course {
+    background-color: #f0f3f8;
+    color: #444;
+    font-size: 13px;
+    padding: 5px 12px;
+    border-radius: 8px;
+}
+
 .profile {
     background-color: #1d539f !important;
     text-align: center;

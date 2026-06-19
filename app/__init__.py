@@ -2,7 +2,7 @@ import os
 from flask import Flask, render_template, request
 from dotenv import load_dotenv
 
-from app.data import PAGES, EXPERIENCES
+from app.data import PAGES, EXPERIENCES, EDUCATION
 
 load_dotenv()
 app = Flask(__name__)
@@ -21,7 +21,8 @@ def experience():
 
 @app.route('/education')
 def education():
-    return render_template('education.html', title="Education", pages=PAGES)
+    return render_template('education.html', title="Education",
+                           pages=PAGES, education=EDUCATION)
 
 
 @app.route('/hobbies')
