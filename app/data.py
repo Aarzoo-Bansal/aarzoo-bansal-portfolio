@@ -155,3 +155,74 @@ EDUCATION = [
         "roles": ["Chairperson, WIE-IEEE", "Coordinator, Technical Club"],
     },
 ]
+# Hobbies, shown as polaroid cards in hobbies.html.
+# "image" is a filename inside app/static/img/.
+HOBBIES = [
+    {
+        "name": "Travelling",
+        "image": "travelling.png",
+        "caption": "Chasing new cultures and views across three continents.",
+    },
+    {
+        "name": "Painting",
+        "image": "painting.png",
+        "caption": "Unwinding with a canvas and a splash of color.",
+    },
+    {
+        "name": "Cooking",
+        "image": "cooking.png",
+        "caption": "Experimenting with recipes from around the world.",
+    },
+    {
+        "name": "Dancing",
+        "image": "dancing1.png",
+        "caption": "Moving to the rhythm whenever the music's on.",
+    },
+]
+
+# Places I've visited, shown as pins on a Leaflet map in map.html.
+# lat/lng are the map coordinates for each pin; note shows in the popup.
+PLACES = [
+    {"name": "Jaypee University of IT, Solan", "lat": 31.0254, "lng": 77.0664,
+     "note": "B.Tech in Information Technology"},
+    {"name": "Agra, India", "lat": 27.1767, "lng": 78.0081,
+     "note": "Lived here for some years"},
+    {"name": "Delhi, India", "lat": 28.6139, "lng": 77.2090,
+     "note": "Got married here"},
+    {"name": "San Francisco, USA", "lat": 37.7749, "lng": -122.4194,
+     "note": "First place I visited in the US"},
+    {"name": "San Jose, USA", "lat": 37.3382, "lng": -121.8863,
+     "note": "Master's"},
+    {"name": "Alaska, USA", "lat": 61.2181, "lng": -149.9003,
+     "note": "Saw my first glacier"},
+    {"name": "New York City, USA", "lat": 40.7128, "lng": -74.0060,
+     "note": ""},
+    {"name": "Glacier National Park, USA", "lat": 48.6968, "lng": -113.7183,
+     "note": ""},
+    {"name": "Idaho, USA", "lat": 43.6150, "lng": -116.2023,
+     "note": ""},
+    {"name": "Colorado, USA", "lat": 39.7392, "lng": -104.9903,
+     "note": ""},
+    {"name": "Kuala Lumpur, Malaysia", "lat": 3.1390, "lng": 101.6869,
+     "note": ""},
+    {"name": "Singapore", "lat": 1.3521, "lng": 103.8198,
+     "note": ""},
+    {"name": "Switzerland", "lat": 46.8182, "lng": 8.2275,
+     "note": ""},
+    {"name": "Germany", "lat": 51.1657, "lng": 10.4515,
+     "note": ""},
+    {"name": "France", "lat": 46.2276, "lng": 2.2137,
+     "note": ""},
+    {"name": "Sri Lanka", "lat": 7.8731, "lng": 80.7718,
+     "note": ""},
+    {"name": "Bathinda, India", "lat": 30.2110, "lng": 74.9455,
+     "note": ""},
+    {"name": "Mumbai, India", "lat": 19.0760, "lng": 72.8777,
+     "note": ""},
+    {"name": "Bangalore, India", "lat": 12.9716, "lng": 77.5946,
+     "note": ""},
+    {"name": "Mysore, India", "lat": 12.2958, "lng": 76.6394,
+     "note": ""},
+    {"name": "Pune, India", "lat": 18.5204, "lng": 73.8567,
+     "note": ""},
+]
