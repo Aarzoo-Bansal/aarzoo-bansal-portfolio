@@ -2,16 +2,11 @@ import os
 from flask import Flask, render_template, request
 from dotenv import load_dotenv
 
+from app.data import PAGES, EXPERIENCES
+
 load_dotenv()
 app = Flask(__name__)
 
-PAGES = [
-    {"name": "Home", "url": "/"},
-    {"name": "Experience", "url": "/experience"},
-    {"name": "Education", "url": "/education"},
-    {"name": "Hobbies", "url": "/hobbies"},
-    {"name": "Map", "url": "/map"},
-]
 
 @app.route('/')
 def index():
@@ -20,7 +15,8 @@ def index():
 
 @app.route('/experience')
 def experience():
-    return render_template('experience.html', title="Experience", pages=PAGES)
+    return render_template('experience.html', title="Experience",
+                           pages=PAGES, experiences=EXPERIENCES)
 
 
 @app.route('/education')
