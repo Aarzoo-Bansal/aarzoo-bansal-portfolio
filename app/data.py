@@ -129,6 +129,32 @@ EXPERIENCES = [
     },
 ]
 
+# Education, most recent first. Rendered by a Jinja loop in education.html.
+EDUCATION = [
+    {
+        "degree": "M.S. in Computer Science",
+        "school": "Northeastern University",
+        "dates": "Dec 2025",
+        "gpa": "3.96",
+        "courses": [
+            "Algorithms", "Cloud Computing", "Natural Language Processing",
+            "Mobile App Development", "Computer Networks", "Computer Systems",
+            "Programming Design Paradigms",
+        ],
+        "roles": ["Teaching Assistant", "President, NU AIG"],
+    },
+    {
+        "degree": "B.Tech in Information Technology",
+        "school": "Jaypee University of Information Technology",
+        "dates": "May 2018",
+        "gpa": "8.7",
+        "courses": [
+            "Data Mining", "Operating Systems", "Database Systems",
+            "Software Engineering", "Web Application Engineering",
+        ],
+        "roles": ["Chairperson, WIE-IEEE", "Coordinator, Technical Club"],
+    },
+]
 # Hobbies, shown as polaroid cards in hobbies.html.
 # "image" is a filename inside app/static/img/.
 HOBBIES = [
