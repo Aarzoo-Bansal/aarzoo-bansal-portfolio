@@ -536,6 +536,80 @@ body {
     height: 200px;
 }
 
+.about {
+    max-width: 700px;
+    margin: 0 auto 50px auto;
+    padding: 35px 40px;
+    background-color: #ffffff;
+    border-radius: 16px;
+    box-shadow: 0 8px 24px rgba(29, 83, 159, 0.12);
+    text-align: center;
+}
+
+.about h2 {
+    color: #1d539f;
+    font-size: 32px;
+    font-weight: 700;
+    margin-top: 0;
+    margin-bottom: 8px;
+}
+
+.about h2::after {
+    content: "";
+    display: block;
+    width: 60px;
+    height: 4px;
+    margin: 12px auto 0 auto;
+    border-radius: 2px;
+    background-color: #1d539f;
+}
+
+.about p {
+    color: #444;
+    font-size: 18px;
+    line-height: 1.7;
+}
+
+.about-tags {
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: center;
+    gap: 10px;
+    margin-bottom: 24px;
+}
+
+.about-tags .tag {
+    background-color: #e8f0fb;
+    color: #1d539f;
+    font-size: 14px;
+    font-weight: 500;
+    padding: 6px 16px;
+    border-radius: 20px;
+}
+
+.about-intro {
+    margin-bottom: 30px;
+}
+
+.about-block {
+    text-align: left;
+    padding-top: 20px;
+    border-top: 1px solid #eef1f6;
+    margin-top: 20px;
+}
+
+.about-block h3 {
+    color: #1d539f;
+    font-size: 20px;
+    font-weight: 700;
+    margin: 0 0 8px 0;
+}
+
+.about-block p {
+    margin: 0;
+    font-size: 16px;
+}
+
 .banner {
     padding: 20px 0px 50px 0px;
     height: 150px;
