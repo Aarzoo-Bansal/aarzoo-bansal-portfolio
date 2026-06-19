@@ -149,7 +149,7 @@ HOBBIES = [
     },
     {
         "name": "Dancing",
-        "image": "dancing.jpeg",
+        "image": "dancing1.png",
         "caption": "Moving to the rhythm whenever the music's on.",
     },
 ]
