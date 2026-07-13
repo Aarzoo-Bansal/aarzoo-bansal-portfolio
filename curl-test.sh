@@ -47,8 +47,11 @@ responseEmail=$(echo "$responseData" | jq -r '.email')
 responseContent=$(echo "$responseData" | jq -r '.content')
 
 printf "\n\n"
-if [[ $responseName == "$name" && "$responseEmail" == "$email" && "$responseContent" == "$content" ]]; then
+if [[ "$responseName" == "$name" && "$responseEmail" == "$email" && "$responseContent" == "$content" ]]; then
 	echo "TEST PASSED"
+	echo "expected: $name / $email / $content"
+	echo "got:      $responseName / $responseEmail / $responseContent"
+	exit 0
 else
 	echo "TEST FAILED"
 	echo "expected: $name / $email / $content"
