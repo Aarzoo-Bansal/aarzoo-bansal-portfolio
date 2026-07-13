@@ -50,7 +50,7 @@ printf "\n\n"
 if [[ "$responseName" == "$name" && "$responseEmail" == "$email" && "$responseContent" == "$content" ]]; then
 	echo "TEST PASSED"
 	echo "expected: $name / $email / $content"
-	echo "got:      $responseName / $responseEmail / $responseContent	
+	echo "got:      $responseName / $responseEmail / $responseContent"	
 
 else
 	echo "TEST FAILED"
