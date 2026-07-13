@@ -50,11 +50,35 @@ printf "\n\n"
 if [[ "$responseName" == "$name" && "$responseEmail" == "$email" && "$responseContent" == "$content" ]]; then
 	echo "TEST PASSED"
 	echo "expected: $name / $email / $content"
-	echo "got:      $responseName / $responseEmail / $responseContent"
-	exit 0
+	echo "got:      $responseName / $responseEmail / $responseContent	
+
 else
 	echo "TEST FAILED"
 	echo "expected: $name / $email / $content"
 	echo "got:      $responseName / $responseEmail / $responseContent"
+	exit 1
+fi
+
+# ======== Deleting the Test Post =========
+printf "\n"
+echo "# ================================== #"
+echo "Deleting the test post..."
+
+postId=$(echo "$postResponse" | jq -r '.id')
+deletedData=$(curl -sS -X DELETE "http://127.0.0.1:5000/api/timeline_post/$postId")
+
+echo "Delete Response:"
+echo "$deletedData"
+
+
+# ======== Verifying Deletion =========
+printf "\n"
+getResponseAfterDelete=$(curl -sS http://127.0.0.1:5000/api/timeline_post)
+
+if [[ "$getResponseAfterDelete" != *"$content"* ]]; then
+	echo "DELETE TEST PASSED: test post no longer present"
+	exit 0
+else
+	echo "DELETE TEST FAILED: test post still present in GET response"
 	exit 1
 fi
