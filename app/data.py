@@ -13,6 +13,7 @@ PAGES = [
     {"name": "Education", "url": "/education"},
     {"name": "Hobbies", "url": "/hobbies"},
     {"name": "Map", "url": "/map"},
+    {"name": "Timeline", "url": "/timeline"},
 ]
 
 # Work experience, most recent first. Rendered by a Jinja loop in experience.html.

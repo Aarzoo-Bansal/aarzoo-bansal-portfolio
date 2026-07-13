@@ -58,6 +58,10 @@ def hobbies():
 def map():
     return render_template('map.html', title="Map", pages=PAGES, places=PLACES)
 
+@app.route('/timeline')
+def timeline():
+    return render_template('timeline.html', title="Timeline", pages=PAGES)
+
 @app.route('/api/timeline_post', methods=['POST'])
 def post_time_line_post():
     name = request.form['name']

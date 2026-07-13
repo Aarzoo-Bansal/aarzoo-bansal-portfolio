@@ -1,4 +1,11 @@
-p, h1, h2, h3, h4, h5, h6, button {
+p,
+h1,
+h2,
+h3,
+h4,
+h5,
+h6,
+button {
     font-family: "Roboto", serif;
 }
 
@@ -516,19 +523,19 @@ body {
 }
 
 .profile h1 {
-        font-size: 50px;
-        font-weight: 700;
-        color: white;
+    font-size: 50px;
+    font-weight: 700;
+    color: white;
 }
 
 .profile img {
-        border-radius: 50%;
-        max-width: 100%;
-        max-height: 100%;
-        margin-left: auto;
-        margin-right: auto;
-        display: block;        
-        padding: 20px;
+    border-radius: 50%;
+    max-width: 100%;
+    max-height: 100%;
+    margin-left: auto;
+    margin-right: auto;
+    display: block;
+    padding: 20px;
 }
 
 .profile .profile-picture {
@@ -617,8 +624,8 @@ body {
 }
 
 .banner .logo {
-    max-width:180px;
-    max-height:60px;
+    max-width: 180px;
+    max-height: 60px;
     width: auto;
     height: auto;
 }
@@ -627,4 +634,86 @@ body {
     color: white;
     font-size: 50px;
     font-weight: 700;
+}
+
+
+.timeline-container {
+    max-width: 640px;
+    margin: 0 auto;
+    padding: 0 1rem 3rem;
+}
+
+#timeline-form {
+    display: flex;
+    flex-direction: column;
+    gap: 0.75rem;
+    background: #ffffff;
+    padding: 1.25rem;
+    border-radius: 12px;
+    box-shadow: 0 2px 10px rgba(0, 0, 0, 0.12);
+    margin-bottom: 2rem;
+}
+
+#timeline-form input,
+#timeline-form textarea {
+    font-family: inherit;
+    font-size: 1rem;
+    padding: 0.6rem 0.75rem;
+    border: 1px solid #ccd3e0;
+    border-radius: 8px;
+}
+
+#timeline-form textarea {
+    min-height: 90px;
+    resize: vertical;
+}
+
+#timeline-form input:focus,
+#timeline-form textarea:focus {
+    outline: none;
+    border-color: #4466aa;
+    box-shadow: 0 0 0 3px rgba(68, 102, 170, 0.15);
+}
+
+#timeline-form button {
+    align-self: flex-end;
+    font-size: 1rem;
+    font-weight: 600;
+    color: #ffffff;
+    background: #3b5998;
+    border: none;
+    border-radius: 8px;
+    padding: 0.6rem 1.5rem;
+    cursor: pointer;
+}
+
+#timeline-form button:hover {
+    background: #2d4373;
+}
+
+.timeline-post {
+    background: #ffffff;
+    border-radius: 12px;
+    box-shadow: 0 2px 8px rgba(0, 0, 0, 0.08);
+    padding: 1rem 1.25rem;
+    margin-bottom: 1rem;
+    text-align: left;
+}
+
+.timeline-post strong {
+    display: block;
+    font-size: 1.05rem;
+    color: #22304a;
+}
+
+.timeline-post p {
+    margin: 0.4rem 0 0.6rem;
+    color: #333;
+    line-height: 1.5;
+    overflow-wrap: break-word;
+}
+
+.timeline-post small {
+    color: #8a93a5;
+    font-size: 0.8rem;
 }
