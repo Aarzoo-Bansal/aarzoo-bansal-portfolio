@@ -24,8 +24,7 @@ EXPERIENCES = [
         "dates": "Jun 2026 – Present",
         "awards": [],
         "bullets": [
-            "Selected for Major League Hacking's Production Engineering track, "
-            "collaborating with a pod of fellows on real-world software projects.",
+            "Containerized a Flask portfolio application using Docker and Docker Compose, orchestrating separate application and MariaDB database containers with persistent named volumes to ensure data survived container recreation and redeploys.",
         ],
     },
     {
