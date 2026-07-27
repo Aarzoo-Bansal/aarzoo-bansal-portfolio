@@ -24,7 +24,8 @@ EXPERIENCES = [
         "dates": "Jun 2026 – Present",
         "awards": [],
         "bullets": [
-            "Containerized a Flask portfolio application using Docker and Docker Compose, orchestrating separate application and MariaDB database containers with persistent named volumes to ensure data survived container recreation and redeploys.",
+            "Containerized a Flask portfolio application using Docker and Docker Compose, orchestrating separate application and MariaDB database containers with persistent named volumes to ensure data survived container recreation and redeploys."
+            "Achieved automated, boot-persistent hosting for a self-built Flask application (Python, peewee ORM, MySQL) by deploying to a DigitalOcean VPS as a systemd service, with bash automation for redeployment and end-to-end API testing (curl, jq)."
         ],
     },
     {
