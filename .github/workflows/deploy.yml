@@ -30,6 +30,4 @@ jobs:
           SSH_IP: ${{ secrets.SSH_IP }}
         
       - name: Print project root directory
-        run: ssh my-vps "cd '$PROJECT_ROOT' && pwd"
-        env:
-          PROJECT_ROOT: ${{ secrets.PROJECT_ROOT }}
+        run: ssh my-vps "cd ${{ secrets.PROJECT_ROOT }} && pwd"
