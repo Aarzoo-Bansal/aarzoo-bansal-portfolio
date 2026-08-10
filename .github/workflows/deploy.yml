@@ -31,3 +31,8 @@ jobs:
         
       - name: Deploy site
         run: ssh my-vps '~/redeploy-site.sh'
+      
+      - name: Print container status
+        run: ssh my-vps "cd '$PROJECT_ROOT' && docker compose ps"
+        env:
+          PROJECT_ROOT: ${{ secrets.PROJECT_ROOT }}
