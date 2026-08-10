@@ -94,8 +94,6 @@ EXPERIENCES = [
             "external REST APIs by analyzing application logs, tracing API call "
             "failures, and refining validation logic, reducing processing errors and "
             "manual rework by approximately 75%.",
-            "Led Software Asset Management training for 150+ colleagues, achieving a "
-            "41% certification success rate.",
         ],
     },
     {
