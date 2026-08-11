@@ -33,6 +33,7 @@ jobs:
   
   deploy:
     name: "Deploy to VPS"
+    needs: test
     runs-on: ubuntu-latest
     steps:
       - name: Configure SSH
