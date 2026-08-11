@@ -25,7 +25,7 @@ class AppTestCase(unittest.TestCase):
         assert "<h2>About Me</h2>" in html
         assert '<a href="/experience"' in html
         assert '<a href="/education"' in html
-        assert '<a href="/hobbiesess"' in html
+        assert '<a href="/hobbies"' in html
         assert '<a href="/map"' in html
         assert '<a href="/timeline"' in html
 
