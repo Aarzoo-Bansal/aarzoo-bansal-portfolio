@@ -124,7 +124,7 @@ class AppTestCase(unittest.TestCase):
                     "/api/timeline_post",
                     data={
                         "name": "John Doe",
-                        "email": email,
+                        "email": "email",
                         "content": "Hello world, I'm John!"
                     }
                 )
