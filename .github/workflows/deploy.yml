@@ -67,7 +67,7 @@ jobs:
 
   notify-failure:
     name: Notify failure
-    needs: [test, deloy]
+    needs: [test, deploy]
     if: failure()
     runs-on: ubuntu-latest
     steps:
