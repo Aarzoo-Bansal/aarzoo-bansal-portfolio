@@ -9,6 +9,7 @@
             <input type="email" name="email" placeholder="Your email" required>
             <textarea name="content" placeholder="What's on your mind?" required></textarea>
             <button type="submit">Post</button>
+            <p id="form-error" class="form-error" hidden></p>
         </form>
 
         <div id="posts"></div>
@@ -43,12 +44,42 @@
             }
         }
 
+        const errorBox = document.getElementById('form-error');
+
+        function showError(message) {
+            errorBox.textContent = message;
+            errorBox.hidden = false;
+        }
+
+        function clearError() {
+            errorBox.textContent = '';
+            errorBox.hidden = true;
+        }
+
         // Function B: intercept form submit, POST, then refresh the list
         document.getElementById('timeline-form').addEventListener('submit', async (event) => {
             event.preventDefault();  // stop the browser's default page-reload submit
+            clearError();
 
             const form = event.target;
             const formData = new FormData(form);  // collects inputs by their name= attributes
+
+            // The browser's `required` check stops truly empty fields, but a field
+            // holding only spaces still counts as filled. Trim first, then check,
+            // so whitespace-only details never reach the server.
+            const blank = [];
+            for (const field of ['name', 'email', 'content']) {
+                const value = (formData.get(field) || '').trim();
+                if (!value) {
+                    blank.push(field);
+                }
+                formData.set(field, value);
+            }
+
+            if (blank.length > 0) {
+                showError(`Please fill in: ${blank.join(', ')}`);
+                return;
+            }
 
             const response = await fetch('/api/timeline_post', {
                 method: 'POST',
@@ -59,7 +90,9 @@
                 form.reset();      // clear the inputs
                 await loadPosts(); // re-fetch so the new post appears
             } else {
-                alert('Failed to create post');
+                // surface the server's reason instead of a generic failure
+                const data = await response.json().catch(() => ({}));
+                showError(data.error || 'Failed to create post');
             }
         });
 

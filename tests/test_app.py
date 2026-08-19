@@ -69,6 +69,12 @@ class AppTestCase(unittest.TestCase):
         assert 'name="email"' in html
         assert 'name="content"' in html
         assert 'id="posts"' in html
+        # every field is marked required so the browser blocks empty submits too
+        assert '<input type="text" name="name" placeholder="Your name" required>' in html
+        assert '<input type="email" name="email" placeholder="Your email" required>' in html
+        assert 'name="content" placeholder="What\'s on your mind?" required>' in html
+        # and the server's rejection message has somewhere to render
+        assert 'id="form-error"' in html
 
     def test_delete_timeline_post(self):
         post = TimelinePost.create(
@@ -130,3 +136,51 @@ class AppTestCase(unittest.TestCase):
                 )
                 assert response.status_code == 400
                 assert response.get_json() == {"error": "Invalid email"}
+
+    def test_empty_timeline_post_is_rejected(self):
+        valid = {
+            "name": "John Doe",
+            "email": "john@example.com",
+            "content": "Hello world, I'm John!"
+        }
+
+        # Each field on its own: empty, whitespace-only, or missing entirely
+        for field in ("name", "email", "content"):
+            for blank in ("", "   ", "\t\n"):
+                with self.subTest(field=field, blank=repr(blank)):
+                    data = dict(valid, **{field: blank})
+                    response = self.client.post("/api/timeline_post", data=data)
+                    assert response.status_code == 400
+                    assert response.get_json() == {"error": f"Invalid {field}"}
+
+            with self.subTest(field=field, blank="missing"):
+                data = {k: v for k, v in valid.items() if k != field}
+                response = self.client.post("/api/timeline_post", data=data)
+                assert response.status_code == 400
+                assert response.get_json() == {"error": f"Invalid {field}"}
+
+        # An entirely empty form reports all three fields at once
+        response = self.client.post("/api/timeline_post", data={})
+        assert response.status_code == 400
+        assert response.get_json() == {"error": "Invalid name, email, content"}
+
+        # None of the rejected submissions were saved
+        assert TimelinePost.select().count() == 0
+        response = self.client.get("/api/timeline_post")
+        assert response.get_json() == {"timeline_posts": []}
+
+    def test_timeline_post_fields_are_stripped(self):
+        response = self.client.post(
+            "/api/timeline_post",
+            data={
+                "name": "  John Doe  ",
+                "email": "  john@example.com\n",
+                "content": "\t Hello world, I'm John! "
+            }
+        )
+        assert response.status_code == 200
+
+        post = response.get_json()
+        assert post["name"] == "John Doe"
+        assert post["email"] == "john@example.com"
+        assert post["content"] == "Hello world, I'm John!"

@@ -691,6 +691,12 @@ body {
     background: #2d4373;
 }
 
+#timeline-form .form-error {
+    margin: 0;
+    font-size: 0.9rem;
+    color: #b3261e;
+}
+
 .timeline-post {
     background: #ffffff;
     border-radius: 12px;

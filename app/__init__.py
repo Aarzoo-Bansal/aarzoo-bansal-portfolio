@@ -108,9 +108,10 @@ def validate_form(*required_fields):
 @app.route('/api/timeline_post', methods=['POST'])
 @validate_form('name', 'email', 'content')
 def post_time_line_post():
-    name = request.form['name']
-    email = request.form['email']
-    content = request.form['content']
+    # strip here too, otherwise "  John  " passes validation but is stored padded
+    name = request.form['name'].strip()
+    email = request.form['email'].strip()
+    content = request.form['content'].strip()
 
     timeline_post = TimelinePost.create(name=name, email=email, content=content)
 
